@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>2 Naming conventions | Real-Time Surveillance of Infectious Diseases: A Statistical Perspective</title>
+<meta name="author" content="Richard Aubrey White">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.8/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="https://docs.sykdomspulsen.no" title="">docs.sykdomspulsen.no</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Real-Time Surveillance of Infectious Diseases: A Statistical Perspective</a></li>
+<li><a class="active" href="naming.html"><span class="header-section-number">2</span> Naming conventions</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="naming" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Naming conventions<a class="anchor" aria-label="anchor" href="#naming"><i class="fas fa-link"></i></a>
+</h1>
+<div id="short-summary" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Short summary<a class="anchor" aria-label="anchor" href="#short-summary"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>
+<p>File name:</p>
+<ul>
+<li>location: use <code>location_code</code> for data and <code>location_name_nb_utf</code> for results (report, figures)</li>
+<li>time generated: add <code>yyyy_mm_dd</code> and time in a day, if needed.</li>
+</ul>
+</li>
+<li><p>Task name: <code>name_grouping + name_action + name_variant</code></p></li>
+<li><p>Database (DB) table name: <code>name_access + name_grouping + name_variant</code></p></li>
+<li>
+<p>DB table variable name</p>
+<ul>
+<li>unified variables</li>
+<li>task-specific variables</li>
+</ul>
+</li>
+</ul>
+<p>The naming should all follow the rules outlined below.</p>
+</div>
+<div id="general-rules" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> General rules<a class="anchor" aria-label="anchor" href="#general-rules"><i class="fas fa-link"></i></a>
+</h2>
+<div id="language" class="section level3" number="2.2.1">
+<h3>
+<span class="header-section-number">2.2.1</span> Language<a class="anchor" aria-label="anchor" href="#language"><i class="fas fa-link"></i></a>
+</h3>
+<p>English is the language for our code. We use <strong>English</strong> in Sykdomspulsen Analytics.</p>
+<p>Names that are abbreviations or in Norwegian are kept as they are: data sources such as <code>msis, dar, sysvak, normomo</code>, locations such as <code>viken, oslo</code>.</p>
+<p>For example:</p>
+<ul>
+<li>Task names: <code>oh_import_msis_data, covid19_risk_level_export_maps_msis_cases_county</code>
+</li>
+<li>Database table names: <code>anon_covid19_risk_levels</code>
+</li>
+</ul>
+<p>Whether to use location name, see the section on <em>file name</em>.</p>
+</div>
+<div id="ordering-of-variables" class="section level3" number="2.2.2">
+<h3>
+<span class="header-section-number">2.2.2</span> Ordering of variables<a class="anchor" aria-label="anchor" href="#ordering-of-variables"><i class="fas fa-link"></i></a>
+</h3>
+<p>Sometimes variables need to be ordered. Variables should be ordered as follows:</p>
+<ul>
+<li>time</li>
+<li>location</li>
+<li>age</li>
+<li>sex</li>
+</ul>
+<p>e.g. A database table could be called <code>msis_by_time_location_age_sex</code> or a filename could be called <code>2020_oslo_05-10_male.xlsx</code></p>
+</div>
+<div id="ages" class="section level3" number="2.2.3">
+<h3>
+<span class="header-section-number">2.2.3</span> Ages<a class="anchor" aria-label="anchor" href="#ages"><i class="fas fa-link"></i></a>
+</h3>
+<p>Ages should always contain at least 2 digits and are joined by a hyphen (e.g. <code>05-10</code>).</p>
+<p>Use <code>85+</code> instead of <code>&gt;=85</code>.</p>
+<p>These tips will help your data be easily sorted and kept in the right order.</p>
+</div>
+<div id="capital-letters" class="section level3" number="2.2.4">
+<h3>
+<span class="header-section-number">2.2.4</span> Capital letters<a class="anchor" aria-label="anchor" href="#capital-letters"><i class="fas fa-link"></i></a>
+</h3>
+<p>Capital letters are to be avoided whenever possible. This is also the case in filenames (e.g. <code>data.rds</code> is preferred to <code>data.RDS</code>)</p>
+</div>
+<div id="snake_case-or-camelcase" class="section level3" number="2.2.5">
+<h3>
+<span class="header-section-number">2.2.5</span> snake_case or camelCase?<a class="anchor" aria-label="anchor" href="#snake_case-or-camelcase"><i class="fas fa-link"></i></a>
+</h3>
+<p>Use snake_case.</p>
+</div>
+</div>
+<div id="file-name" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> File name<a class="anchor" aria-label="anchor" href="#file-name"><i class="fas fa-link"></i></a>
+</h2>
+<div id="location_code-or-location_name" class="section level3" number="2.3.1">
+<h3>
+<span class="header-section-number">2.3.1</span> <code>location_code</code> or <code>location_name</code>?<a class="anchor" aria-label="anchor" href="#location_code-or-location_name"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Data files: use <code>location_code</code>
+</li>
+</ul>
+<p>When saving data files for use within Sykdomspulsen Analytics, <code>location_code</code> (e.g. <code>county03</code>) should be used, such as <code>county03_05-10_male_2020.rds</code>.</p>
+<ul>
+<li>Results: use <code>location_name</code>
+</li>
+</ul>
+<p>This applies to figures, tables in excel sheets, documents. Use the actual location name because they will be read by people outside the Sykdomspulsen team.</p>
+<p>Use <code>location_name_nb_utf</code> for the Norwegian Bokmål language and UTF-8 encoding. For instance <code>2020_Oslo_fylke_05-10_male.xlsx</code>.</p>
+<p>You can get <code>location_name_nb_utf</code> from the function <code><a href="https://rdrr.io/pkg/fhidata/man/norway_locations_names.html">fhidata::norway_locations_names()</a></code></p>
+</div>
+<div id="when-is-the-file-created" class="section level3" number="2.3.2">
+<h3>
+<span class="header-section-number">2.3.2</span> When is the file created<a class="anchor" aria-label="anchor" href="#when-is-the-file-created"><i class="fas fa-link"></i></a>
+</h3>
+<p>In results (e.g. reports), an indicator of time when the files are created are necessary. It allows us to find which one is the most recent version of files with the same names, and it allows easy tracking of an Airflow error.</p>
+<p>e.g. <code>Epidemiologisk_situasjonsrapport_2021_05_31_0659.docx</code> for a report generated on May 31, 2021 06:59 AM.</p>
+</div>
+</div>
+<div id="db-table-variables-unified-variables" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> DB table variables: unified variables<a class="anchor" aria-label="anchor" href="#db-table-variables-unified-variables"><i class="fas fa-link"></i></a>
+</h2>
+<p>All accessible DB tables will contain these 16 variables.</p>
+<p>Time conversion functions can be found in package <a href="https://folkehelseinstituttet.github.io/fhiplot/articles/time_conversion.html">fhiplot</a>.</p>
+<div class="inline-table"><table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 100%; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-2">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:unnamed-chunk-2">Table 2.1: </span>
+</caption>
+<col>
+<col>
+<col>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(84, 153, 199); font-weight: bold;">
+<span style="color: rgb(255, 255, 255);">Variables</span>
+</th>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(84, 153, 199); font-weight: bold;">
+<span style="color: rgb(255, 255, 255);">Accepted values</span>
+</th>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(84, 153, 199); font-weight: bold;">
+<span style="color: rgb(255, 255, 255);">Description</span>
+</th>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+granularity_time
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+total, isoyear, isoweek, day, hour, calyear, calmonth
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+Temporal granularity
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+granularity_geo
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+norge, county, municip, baregion, wardoslo, wardbergen, wardtrondheim, wardstavanger, missingwardoslo, missingwardbergen, missingwardtrondheim, missingwardstavanger, region, faregion, notmainlandmunicip, notmainlandcounty, missingmunicip, missingcounty
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+Geographical granularity
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+country_iso3
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+nor, den, swe, fin
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+ISO3 country code, e.g. nor for Norway
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+location_code
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+norge, countyXX, municipXXXX, …
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+The geographical location
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+border
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+2020
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+The borders (kommunesammenslåing) that <code>location_code</code> represents
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+age
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+e.g. 0, 1, 2, 00-04, 05-14, total
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+Age in years
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+sex
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+male, female, total
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+Sex
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+isoyear
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+YYYY
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+Use function <code><a href="https://folkehelseinstituttet.github.io/fhiplot/reference/isoyear_n.html">fhiplot::isoyear_n</a></code>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+isoweek
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+0, 1, 2, …, 53
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+Use function <code><a href="https://folkehelseinstituttet.github.io/fhiplot/reference/isoweek_n.html">fhiplot::isoweek_n</a></code>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+isoyearweek
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+YYYY-WW
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+Use function <code><a href="https://folkehelseinstituttet.github.io/fhiplot/reference/isoyearweek_c.html">fhiplot::isoyearweek_c</a></code>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+season
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+e.g. 2014/2015, 2014/2014, 2014
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+Winter seasons are denoted by 2014/2015 (generally three options: weeks 30-29, weeks 40-20, or weeks 40-39), summer seasons are denoted by 2014/2014 (generally weeks 21-39), years are denoted by the year.
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+seasonweek
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+1, 2, 3, …, 23, 23.5, 24, …, 52
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+Use function <code><a href="https://folkehelseinstituttet.github.io/fhiplot/reference/seasonweek_to_week_n.html">fhiplot::seasonweek_to_week_n()</a></code>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+calyear
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+e.g. 2021
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+Calendar year. Cal* == NA when granularity_time == iso<em>; cal</em> != NA when granularity == day or cal*
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+calmonth
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+1, …, 12
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+Calendar month.
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+calyearmonth
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+e.g. 2021-03
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+Calendar year month.
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+date
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+YYYY-MM-DD
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+Always corresponds to the last date in the time period. E.g. if <code>granularity_time=='week'</code> then date is the Sunday of that week. <code><a href="https://rdrr.io/pkg/fhidata/man/days.html">fhidata::days</a></code> is useful here.
+</td>
+</tr>
+</table></div>
+</div>
+<div id="db-table-variables-task-specific-variables" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> DB table variables: task-specific variables<a class="anchor" aria-label="anchor" href="#db-table-variables-task-specific-variables"><i class="fas fa-link"></i></a>
+</h2>
+<p>Task-specific variables are commonly referred to as Tags. A <code>tag</code> is a descriptor of the row. That is, an identifier of data that is in long format. For example: <code>tag_outcome, tag_exposure</code>.</p>
+<p>Variable names that contain values should be in one the following forms:</p>
+<ul>
+<li><code>descriptive_format</code></li>
+<li><code>descriptive_format_functiontime</code></li>
+</ul>
+<div class="inline-table"><table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 100%; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-3">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:unnamed-chunk-3">Table 2.2: </span>
+</caption>
+<col>
+<col>
+<col>
+<tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(84, 153, 199); font-weight: bold;">
+<span style="color: rgb(255, 255, 255);">Tag names</span>
+</th>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(84, 153, 199); font-weight: bold;">
+<span style="color: rgb(255, 255, 255);">Examples</span>
+</th>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(84, 153, 199); font-weight: bold;">
+<span style="color: rgb(255, 255, 255);">Notes</span>
+</th>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+descriptive
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+deaths, consultations
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+msis_case_testdate
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+modelled_r_greater_than_1
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+format
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+n, cum_n
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+counts, cumulative counts
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+pr100, pr100000
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+percentages/proportions
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+n_expected, pr100_expected
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+corrected_n, corrected_baseline_n
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+predinterval_p02x5, confinterval_p00x1
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+p02x5, p97x5 (0.025, 0.975)
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+predinterval_l2, confinterval_u2
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+lower and upper limits (see explanation below)
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+status
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(169, 204, 227); font-weight: normal;">
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+functiontime
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+sum0_13
+</td>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 1pt 1pt 1pt; border-top-color: rgb(255, 255, 255);  border-right-color: rgb(255, 255, 255);  border-bottom-color: rgb(255, 255, 255);  border-left-color: rgb(255, 255, 255); padding: 6pt 6pt 6pt 6pt; background-color: rgb(212, 230, 241); font-weight: normal;">
+aggregated n case for today and preceeding 13 days
+</td>
+</tr>
+</table></div>
+<div id="tag-descriptive" class="section level4" number="2.5.0.1">
+<h4>
+<span class="header-section-number">2.5.0.1</span> Tag descriptive<a class="anchor" aria-label="anchor" href="#tag-descriptive"><i class="fas fa-link"></i></a>
+</h4>
+<p>When creating a database table with many different sources of data, it is recommended to include the data source as a descriptive:</p>
+<ul>
+<li>
+<code>msis_cases_testdate_n</code> - number of cases by testing date</li>
+<li>
+<code>msis_cases_regdate_n</code> - number of cases by registration date</li>
+<li>
+<code>msislab_tests_n</code> - number of tests performed</li>
+<li>
+<code>nipar_hospital_main_cause_n</code> - number of people who were admitted to the hospital with covid-19 as a main cause</li>
+<li>
+<code>nipar_icu_n</code> - number of people who were admitted to the ICU with covid-19</li>
+<li>
+<code>mor_deaths_n</code> - number of deaths</li>
+</ul>
+</div>
+<div id="tag-format" class="section level4" number="2.5.0.2">
+<h4>
+<span class="header-section-number">2.5.0.2</span> Tag format<a class="anchor" aria-label="anchor" href="#tag-format"><i class="fas fa-link"></i></a>
+</h4>
+<p><code>format</code> is the format that the value is stored in.</p>
+<p>For <strong>percentages/proportions</strong>, we recommend using <code>pr100</code> (i.e. values going between 0 and 100) over <code>pr1</code> (i.e. values going between 0 and 1).</p>
+<p>For <strong>intervals</strong>, use <code>XintervalY</code>. We recommend:</p>
+<ul>
+<li>
+<code>X</code> describing the type of interval. If you are using frequentist statistics, this is probably <code>predinterval</code> or <code>confinterval</code>. If you are using Bayesian statistics, then <code>credinterval</code> would be appropriate, and the <code>descriptive</code> would then determine if the credible interval is describing a variable (Bayesian prediction interval) or a population/distribution parameter (Bayesian confidence interval).</li>
+<li>
+<code>Y</code> describes the limit, for example (in percentiles) <code>_p02x5</code>, <code>_p97x5</code>, <code>_p00x1</code>, <code>_p99x9</code> or (in z-scores) <code>_l2</code>, <code>_u2</code>, <code>_l4</code>, <code>_u4</code>.</li>
+</ul>
+<p>Some examples are as follows:</p>
+<ul>
+<li>
+<code>deaths_n</code> - number of deaths</li>
+<li>
+<code>deaths_n_sum0_13</code> - number of deaths that occurred today and the preceeding 13 days</li>
+<li>
+<code>deaths_pr100000_sum0_13</code> - number of deaths that occurred today and the preceeding 13 days, per 100 00 population</li>
+<li>
+<code>consultations_r80_vk_ote_n</code> - number of influenza consultations</li>
+<li>
+<code>deaths_registered_n</code> - number of deaths registered</li>
+<li>
+<code>deaths_corrected_n</code> - number of deaths (corrected for registration delay)</li>
+<li>
+<code>deaths_corrected_n_credinterval_p02x5</code> - Bayesian prediction interval for the “true” number of deaths</li>
+<li>
+<code>deaths_corrected_n_credinterval_p97x5</code> - Bayesian prediction interval for the “true” number of deaths</li>
+<li>
+<code>deaths_corrected_baseline_n</code> - Expected number of deaths (i.e. the baseline)</li>
+<li>
+<code>deaths_corrected_baseline_n_credinterval_p02x5</code> - Bayesian prediction interval for the expected number of death (baseline)</li>
+<li>
+<code>deaths_corrected_baseline_n_credinterval_p97x5</code> - Bayesian prediction interval for the expected number of death (baseline)</li>
+</ul>
+</div>
+<div id="tag-functiontime" class="section level4" number="2.5.0.3">
+<h4>
+<span class="header-section-number">2.5.0.3</span> Tag functiontime<a class="anchor" aria-label="anchor" href="#tag-functiontime"><i class="fas fa-link"></i></a>
+</h4>
+<p>We can also include variables that refer to multiple days/weeks:</p>
+<ul>
+<li>
+<code>msis_cases_testdate_n_sum0_13</code> - the aggregate number of cases for today and the preceeding 13 days by testing date</li>
+<li>
+<code>msis_cases_testdate_pr100000_sum0_13</code> - the aggregate number of cases for today and the preceeding 13 days by testing date per 100 000 population</li>
+</ul>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html"><span class="header-section-number">1</span> Real-Time Surveillance of Infectious Diseases: A Statistical Perspective</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#naming"><span class="header-section-number">2</span> Naming conventions</a></li>
+<li><a class="nav-link" href="#short-summary"><span class="header-section-number">2.1</span> Short summary</a></li>
+<li>
+<a class="nav-link" href="#general-rules"><span class="header-section-number">2.2</span> General rules</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#language"><span class="header-section-number">2.2.1</span> Language</a></li>
+<li><a class="nav-link" href="#ordering-of-variables"><span class="header-section-number">2.2.2</span> Ordering of variables</a></li>
+<li><a class="nav-link" href="#ages"><span class="header-section-number">2.2.3</span> Ages</a></li>
+<li><a class="nav-link" href="#capital-letters"><span class="header-section-number">2.2.4</span> Capital letters</a></li>
+<li><a class="nav-link" href="#snake_case-or-camelcase"><span class="header-section-number">2.2.5</span> snake_case or camelCase?</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#file-name"><span class="header-section-number">2.3</span> File name</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#location_code-or-location_name"><span class="header-section-number">2.3.1</span> location_code or location_name?</a></li>
+<li><a class="nav-link" href="#when-is-the-file-created"><span class="header-section-number">2.3.2</span> When is the file created</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#db-table-variables-unified-variables"><span class="header-section-number">2.4</span> DB table variables: unified variables</a></li>
+<li><a class="nav-link" href="#db-table-variables-task-specific-variables"><span class="header-section-number">2.5</span> DB table variables: task-specific variables</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Real-Time Surveillance of Infectious Diseases: A Statistical Perspective</strong>" was written by Richard Aubrey White. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
